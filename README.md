@@ -30,5 +30,11 @@ Write functions:
   - [x] withdraw(): Withdraw the total balance to an owner, only owners are allowed to perform this transaction
   - [x] buyTicket(TicketType _type): Buys a ticket and returns ticket number, ticket hash, and ticket information, any user can perform this transaction
 
+Ticket information:
+  - blockNumber: block number of the ticket creation
+  - startTimestamp: the timestamp of the ticket creation
+  - endTimestamp: the expiry date timestamp 
+  - ticketType: the ticket type {0: single, 1: daily, 2: weekly, 3: monthly, 4: yearly}
+  - price: the price of the ticket at creation
 
 

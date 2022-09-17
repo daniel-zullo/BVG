@@ -45,6 +45,7 @@ contract BVG {
     
     // Sets the price of a ticket
     function setTicketPrice(TicketType _type, uint _price) onlyOwners public {
+        require(_type <= TicketType.Yearly, "Ticket type not supported");
         require(ticketPrices[_type] > 0 wei, "Price needs to be higher than zero");
 
         ticketPrices[_type] = _price * 1 wei;

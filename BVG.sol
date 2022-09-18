@@ -123,8 +123,10 @@ contract BVG {
     }
     
     // Gets the user's ticket
-    function getUserTicket(uint _ticketNumber) validTicketNumber(_ticketNumber) view public returns (Ticket memory) {
-        return users[msg.sender][_ticketNumber];
+    function getUserTicket(uint _ticketNumber) validTicketNumber(_ticketNumber) view public returns (bytes32, Ticket memory) {
+        Ticket memory ticket = users[msg.sender][_ticketNumber];
+        bytes32 hash = getTicketHash(_ticketNumber, ticket);
+        return (hash, ticket);
     }
 
     // Gets the user's all tickets
